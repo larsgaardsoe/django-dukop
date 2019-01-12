@@ -1,0 +1,11 @@
+
+language: python
+
+dist: xenial
+
+install:
+    - sudo pip install -e ".[dev]"
+
+# Build the website
+script:
+    - pytest
