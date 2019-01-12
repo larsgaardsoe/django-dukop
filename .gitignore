@@ -16,6 +16,7 @@
 media/*
 !media/.gitkeep
 staticfiles/
+src/dukop/settings/local.py
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
