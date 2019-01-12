@@ -1,0 +1,45 @@
+.places  {
+  flex: 3;
+  padding-left: 20px;
+}
+
+.places__title {
+  border-bottom: 1px solid #666;
+  width: 100%;
+  padding: 0 5px;
+  color: #666;
+  cursor: pointer;
+}
+
+.places__dropdown {
+  position: absolute;
+  max-height: 0;
+  left: 0;
+  top: 50px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+  z-index: 5;
+  transition: max-height .5s;
+}
+
+.places__dropdown.js-active {
+  max-height: 500px;
+  overflow: auto;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+}
+
+.places__content {
+  padding: 20px;
+}
+
+.places__place {
+  margin-bottom: 10px;
+}
+
+.places__image {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}

@@ -1,0 +1,151 @@
+@import "base";
+@import "header";
+@import "search";
+@import "places";
+@import "card";
+@import "timeline";
+@import "create-form";
+@import "event-table";
+
+.lock-body.js-active {
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0);
+  transition: background-color .3s;
+}
+
+.overlay.js-active  {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  overflow: scroll;
+}
+
+.title {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 1.5em;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+  line-height: 1.2em;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+}
+
+.title--space {
+  margin-top: 40px;
+}
+
+.title__bold {
+  font-weight: 900;
+}
+
+.news__link {
+  color: inherit;
+  display: flex;
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.news__link:hover {
+  background-color: rgba(255,255,255, .3);
+}
+
+.news__date {
+  color: #42767F;
+  padding-right: 10px;
+  flex: 0 0 75px;
+  text-align: right;
+
+  &--title {
+    flex: 0 0 205px;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    line-height: 1.2em;
+  }
+}
+
+.news__content {
+  flex: 1;
+}
+
+.news__title {
+  flex: 1;
+}
+
+
+.footer {
+  margin-top: 40px;
+}
+
+@media (min-width: 700px){
+  body {
+    background: linear-gradient(-180deg, rgba(236, 236, 222,.8) 0%, rgba(177, 196, 181,.8) 100%), url('/static/img/bg.jpg') top right -300px no-repeat;
+  }
+
+  .header__controls {
+    display: flex;
+  }
+
+  .header__burger {
+    display: none;
+  }
+
+  .page-container {
+    padding: 0 1.1vw;
+  }
+
+  .card {
+    transform: scale(.97, .97);
+    margin: 10px auto;
+    &--static {
+      transform: scale(1, 1);
+    }
+  }
+
+  .card__media {
+    display: block;
+    min-width: auto;
+  }
+
+  .card__layout {
+    display: flex;
+  }
+
+  .card__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .card:hover {
+    transform: scale(1,1);
+
+  }
+
+  .footer__content {
+    display: flex;
+  }
+  .footer__content > div {
+    flex: 1;
+  }
+}

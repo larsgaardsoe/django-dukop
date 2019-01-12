@@ -1,0 +1,48 @@
+.table {
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+}
+
+.table__day {
+  background-color: rgba(236, 236, 222,.2)
+}
+
+.table__day:nth-child(odd) {
+  background-color: rgba(177, 196, 181,.2)
+}
+
+.table__header {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table__event {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  color: inherit;
+  text-decoration: none;
+}
+
+.table__event:hover {
+  background-color: #eee;
+}
+
+.table__time {
+  flex-basis: 120px;
+  width: 120px;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+  text-align: right;
+}
+
+.table__title {
+  padding: 10px;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.table__place {
+  padding: 10px;
+  font-style: italic;
+  border-left: 1px solid #ddd;
+}

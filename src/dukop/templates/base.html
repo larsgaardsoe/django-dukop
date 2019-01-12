@@ -1,0 +1,87 @@
+{% load i18n static compress %}<!DOCTYPE html>
+<html>
+<head>
+<title>Duk Op</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0,initial-scale=1.0" />
+<!-- Shortcut icons (favicon) -->
+<link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+<link rel="apple-touch-icon" href="{% static 'img/favicon.png' %}">
+
+    <meta property="og:url" content="https://www.dukop.dk/">
+    <meta property="og:title" content="Duk dig ikke - Duk Op!">
+    <meta property="og:description" content="DukOp er vores fælles guide til, hvad der sker i København og omegn, hvad enten du leder efter demonstrationer, koncerter, fester, møder, folkekøkkener, havedage, workshops, kunst- og filmfremvisninger, mv..">
+    <meta property="og:image" content="{% static 'img/social_media.jpg' %}">
+    <meta property="og:site_name" content="Duk Op">
+    <meta property="og:locale" content="da_DK">
+
+    {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'css/application.scss' %}">
+    {% endcompress %}
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="u/r1XnjQgRo5bxwz7fZNl98KN+p2Bjc0SRu2LcXwVwdlnhwE9tG9ps1/fqKCDkpqrml+c8zI6MIzrXN7blbBGw==" />
+</head>
+<body>
+<div class="lock-body" id="js-lock-body">
+
+    <header>
+        <div class="page-container">
+            <div class="header">
+                <div class="header__logo">
+                    <a href="/?locale=da">
+                        <img src="{% static 'img/moon_logo.png' %}" alt="Moon logo" />
+
+</a>                </div>
+                <div class="header__burger js-toggle" data-element="js-controls">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                {% if user.is_authenticated %}
+
+                  <a class="header__link" href="/events/new?locale=da">{% trans "New event" %}</a>
+                  <a class="header__link" href="{% url "users:logout" %}">{% trans "Log out" %}</a>
+
+                {% else %}
+
+                  <a class="header__link" href="{% url "users:login" %}">{% trans "Log in" %}</a>
+
+                {% endif %}
+
+            </div>
+        </div>
+    </header>
+
+
+{% block content %}
+
+{% endblock %}
+
+
+    <footer>
+        <div class="page-container">
+            <div class="footer">
+                <div class="footer__content">
+                    <div class="footer__about">
+                        <h2 class="title title--footer">Om os</h2>
+                        <p>DukOp er vores fælles guide til, hvad der sker i København og omegn, hvad enten du leder efter demonstrationer, koncerter, fester, møder, folkekøkkener, havedage, workshops, kunst- og filmfremvisninger, mv..</p>
+                    </div>
+                    <div class="footer__news">
+                        <h2 class="title title--footer">Nyt</h2>
+                        <div class="news">
+                                <a href="/posts/27?locale=da" class="news__link">
+                                <div class="news__date">
+                                    28.12.18
+                                </div>
+                                <div class="news__title">
+                                    DukOp anbefaler det nye Konfront.dk - Nyheder og Baggrund med mening!
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

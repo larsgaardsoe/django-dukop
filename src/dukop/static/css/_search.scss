@@ -1,0 +1,15 @@
+.search  {
+  flex: 3;
+  padding-left: 20px;
+  &__input {
+    display: block;
+    font-style: italic;
+    font-weight: 100;
+    border: 0;
+    border-bottom: 1px solid #666;
+    font-size: 1em;
+    padding: 2px 5px;
+    background: none;
+    width: 100%;
+  }
+}

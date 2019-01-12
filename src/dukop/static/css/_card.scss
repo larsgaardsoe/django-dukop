@@ -1,0 +1,133 @@
+.location-card,
+.card {
+  display: block;
+  color: #444;
+  text-decoration: none;
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+  margin: 20px auto;
+  max-width: 900px;
+  transition: transform .5s;
+
+}
+
+.card.js-active {
+  transform: scale(1,1);
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  z-index: 11;
+}
+
+.card__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card.js-active .card__toggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: red;
+  margin: -15px -15px 0 0;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTVweCIgaGVpZ2h0PSIxNXB4IiB2aWV3Qm94PSIwIDAgMTUgMTUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxnIGlkPSJjcm9zcyIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGRkZGIj4gICAgICAgICAgICA8cGF0aCBkPSJNMTQuNDEyNzI3MywxMS42ODU0NTQ1IEwxNC40MTI3MjczLDExLjY4NTQ1NDUgTDEwLDcuMjcyNzI3MjcgTDE0LjQxMjcyNzMsMi44NiBMMTQuNDEyNzI3MywyLjg2IEMxNC40NjA0NTQ1LDIuODEyMjcyNzMgMTQuNDk0NTQ1NSwyLjc1NjgxODE4IDE0LjUxNjgxODIsMi42OTc3MjcyNyBDMTQuNTc3MjcyNywyLjUzNTkwOTA5IDE0LjU0MjcyNzMsMi4zNDcyNzI3MyAxNC40MTI3MjczLDIuMjE3MjcyNzMgTDEyLjMyODE4MTgsMC4xMzI3MjcyNzMgQzEyLjE5ODE4MTgsMC4wMDI3MjcyNzI3MyAxMi4wMDkwOTA5LC0wLjAzMTM2MzYzNjQgMTEuODQ3NzI3MywwLjAyODYzNjM2MzYgQzExLjc4ODYzNjQsMC4wNTA0NTQ1NDU1IDExLjczMzE4MTgsMC4wODUgMTEuNjg1NDU0NSwwLjEzMjI3MjcyNyBMMTEuNjg1NDU0NSwwLjEzMjI3MjcyNyBMNy4yNzI3MjcyNyw0LjU0NSBMMi44NiwwLjEzMjI3MjcyNyBMMi44NiwwLjEzMjI3MjcyNyBDMi44MTIyNzI3MywwLjA4NSAyLjc1NjgxODE4LDAuMDUwNDU0NTQ1NSAyLjY5NzcyNzI3LDAuMDI4NjM2MzYzNiBDMi41MzU5MDkwOSwtMC4wMzE4MTgxODE4IDIuMzQ3MjcyNzMsMC4wMDI3MjcyNzI3MyAyLjIxNzI3MjczLDAuMTMyNzI3MjczIEwwLjEzMjcyNzI3MywyLjIxNzI3MjczIEMwLjAwMjcyNzI3MjczLDIuMzQ3MjcyNzMgLTAuMDMxMzYzNjM2NCwyLjUzNjM2MzY0IDAuMDI4NjM2MzYzNiwyLjY5NzcyNzI3IEMwLjA1MDkwOTA5MDksMi43NTY4MTgxOCAwLjA4NSwyLjgxMjI3MjczIDAuMTMyNzI3MjczLDIuODYgTDAuMTMyNzI3MjczLDIuODYgTDQuNTQ1NDU0NTUsNy4yNzI3MjcyNyBMMC4xMzI3MjcyNzMsMTEuNjg1NDU0NSBMMC4xMzI3MjcyNzMsMTEuNjg1NDU0NSBDMC4wODU0NTQ1NDU1LDExLjczMzE4MTggMC4wNTA5MDkwOTA5LDExLjc4ODYzNjQgMC4wMjg2MzYzNjM2LDExLjg0NzcyNzMgQy0wLjAzMTgxODE4MTgsMTIuMDA5MDkwOSAwLjAwMjcyNzI3MjczLDEyLjE5ODE4MTggMC4xMzI3MjcyNzMsMTIuMzI4MTgxOCBMMi4yMTcyNzI3MywxNC40MTI3MjczIEMyLjM0NzI3MjczLDE0LjU0MjcyNzMgMi41MzYzNjM2NCwxNC41NzY4MTgyIDIuNjk3NzI3MjcsMTQuNTE2ODE4MiBDMi43NTY4MTgxOCwxNC40OTQ1NDU1IDIuODEyMjcyNzMsMTQuNDYwNDU0NSAyLjg2LDE0LjQxMjcyNzMgTDIuODYsMTQuNDEyNzI3MyBMNy4yNzI3MjcyNywxMCBMMTEuNjg1NDU0NSwxNC40MTI3MjczIEwxMS42ODU0NTQ1LDE0LjQxMjcyNzMgQzExLjczMzE4MTgsMTQuNDYwNDU0NSAxMS43ODg2MzY0LDE0LjQ5NDU0NTUgMTEuODQ3NzI3MywxNC41MTY4MTgyIEMxMi4wMDk1NDU1LDE0LjU3NzI3MjcgMTIuMTk4MTgxOCwxNC41NDI3MjczIDEyLjMyODE4MTgsMTQuNDEyNzI3MyBMMTQuNDEyNzI3MywxMi4zMjgxODE4IEMxNC41NDI3MjczLDEyLjE5ODE4MTggMTQuNTc3MjcyNywxMi4wMDkwOTA5IDE0LjUxNjgxODIsMTEuODQ3NzI3MyBDMTQuNDk0NTQ1NSwxMS43ODg2MzY0IDE0LjQ2MDQ1NDUsMTEuNzMzMTgxOCAxNC40MTI3MjczLDExLjY4NTQ1NDUgTDE0LjQxMjcyNzMsMTEuNjg1NDU0NSBaIiBpZD0iU2hhcGUiPjwvcGF0aD4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.card__media {
+  display: block;
+  flex: 1;
+  background-color: rgb(236, 236, 222);
+}
+
+.card__media img {
+  display: block;
+  min-width: 100%;
+
+}
+
+.card__text {
+  padding: 20px;
+}
+
+.card__util,
+.card__date,
+.card__place {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 1.5em;
+  color: #00BF91;
+  text-align: right;
+  letter-spacing: -1px;
+}
+
+.location-card h1 {
+    font-size: 1.5em;
+    color: #00BF91;
+}
+.location-card h2 {
+  color: #00BFC8;
+  margin-top: 5px;
+}
+
+.card__place {
+  color: #00BFC8;
+  margin-top: 5px;
+}
+
+.card__util a {
+  font-size: 0.8em;
+  color: #00BFC8;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+.card__util a:hover {
+    text-decoration: underline;
+}
+.card__bold {
+  font-weight: 800;
+}
+
+.card__title {
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 2em;
+  margin: 20px 0 10px 0;
+  letter-spacing: -1px;
+  line-height: 1em;
+}
+
+.card__more {
+  height: 0;
+  width: 0;
+  overflow: auto;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.card__color {
+  background: rgba(236, 236, 222,.8);
+}
+
+.card.js-active .card__more {
+  height: auto;
+  opacity: 1;
+  width: auto;
+}
+
+.card.js-active .card__more > div {
+  flex: 1;
+}
+
+.card__link a {
+    text-decoration: none;
+    color: inherit
+}
+.card__link a:hover { text-decoration: underline; }
