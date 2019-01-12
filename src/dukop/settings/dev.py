@@ -10,9 +10,11 @@ INTERNAL_IPS = ["localhost", "127.0.0.1", "[::1]"]
 # https://docs.djangoproject.com/en/2.1/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
 
-INSTALLED_APPS += ("debug_toolbar",)
+INSTALLED_APPS += ("debug_toolbar",)  # noqa
 
-MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware"] + MIDDLEWARE
+COMPRESS_ENABLED = False
+
+MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware"] + MIDDLEWARE   # noqa
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 

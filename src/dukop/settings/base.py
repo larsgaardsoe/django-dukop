@@ -21,9 +21,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "compressor",
+    "dukop.apps.calendar",
+    "dukop.apps.users",
 ]
 
-# Settings from Pretalx
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',  # Security first
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -79,12 +81,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGES = [('en', _('English')), ('da', _('Danish')),]
+LANGUAGES = [('en', _('English')), ('da', _('Danish'))]
 LANGUAGE_CODE = "da-dk"
 
 LOCALE_PATHS = [str(BASE_DIR / "locale")]
@@ -110,6 +110,7 @@ STATICFILES_DIRS = [str(BASE_DIR / "static")]
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Media files (uploaded by a user)
@@ -171,3 +172,13 @@ LOGGING = {
         }
     }
 }
+
+COMPRESS_PRECOMPILERS = (('text/x-scss', 'django_libsass.SassCompiler'),)
+COMPRESS_CSS_FILTERS = (
+    # CssAbsoluteFilter is incredibly slow, especially when dealing with our _flags.scss
+    # However, we don't need it if we consequently use the static() function in Sass
+    # 'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSCompressorFilter',
+)
+
+LOGIN_REDIRECT_URL = "/"
