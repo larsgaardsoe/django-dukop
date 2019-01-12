@@ -5,6 +5,7 @@ Django settings for dukop project.
 """
 import pathlib
 
+from django.urls.base import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: str(BASE_DIR / "static")
@@ -182,3 +183,5 @@ COMPRESS_CSS_FILTERS = (
 )
 
 LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = reverse_lazy("users:login")
+LOGOUT_URL = reverse_lazy("users:logout")
