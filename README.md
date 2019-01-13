@@ -1,5 +1,7 @@
 # dukop.dk
 
+[![Build Status](https://travis-ci.com/dukop/django-dukop.svg?branch=master)](https://travis-ci.com/dukop/django-dukop)
+
 Collaborate calendar for Copenhagen area
 
 ## Requirements
