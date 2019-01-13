@@ -6,7 +6,8 @@ python:
   - "3.7"
 
 install:
-    - sudo pip install -e ".[dev]"
+  - pip install --upgrade pip setuptools wheel
+  - pip install -e ".[dev]"
 
 # Build the website
 script:
