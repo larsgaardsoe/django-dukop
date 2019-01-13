@@ -11,4 +11,6 @@ install:
 
 # Build the website
 script:
-    - pytest
+  - python manage.py
+  - python manage.py migrate
+  - pytest
