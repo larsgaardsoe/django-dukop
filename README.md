@@ -1,5 +1,7 @@
 # dukop.dk
 
+[![Build Status](https://travis-ci.com/dukop/django-dukop.svg?branch=master)](https://travis-ci.com/dukop/django-dukop)
+
 Collaborate calendar for Copenhagen area
 
 ## Requirements
@@ -16,10 +18,18 @@ Install the project and the development dependencies into a [virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install --upgrade pip setuptools wheel
-python3 -m pip install --editable .[dev]
+python3 -m pip install --editable ".[dev]"
 ./manage.py migrate
 ./manage.py createsuperuser
 ./manage.py runserver
+```
+
+## Running tests
+
+More details to come, but for now, just open a PR and wait for Travis or run this:
+
+```console
+pytest
 ```
 
 ## Starting a New App

@@ -1,0 +1,15 @@
+
+language: python
+
+python:
+  - "3.6"
+
+install:
+  - pip install --upgrade pip setuptools wheel
+  - pip install -e ".[dev]"
+
+# Build the website
+script:
+  - python manage.py help > /dev/null || echo "This is fine"
+  - python manage.py migrate
+  - pytest
