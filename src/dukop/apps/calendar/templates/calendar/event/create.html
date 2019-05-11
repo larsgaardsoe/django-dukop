@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<h1>{% trans "Create event" %}</h1>
+
+<form method="POST">
+
+{{ form.as_p }}
+
+{% for form in times %}
+
+  {{ form.as_p }}
+
+  <!--OPRET EKSTRA DATO FELTER HER -->
+  <!-- <p><input type="date" name="sdjklfhsklfhlks"></p> -->
+
+{% endfor %}
+
+<button type="submit">{% trans "Create" %}</button>
+
+</form>
+
+{% endblock %}

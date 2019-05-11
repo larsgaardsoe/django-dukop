@@ -17,16 +17,17 @@ Examples:
 
 """
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import include
 from django.urls import path
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path("admin/", admin.site.urls),
     path("users/", include("dukop.apps.users.urls")),
     path("", include("dukop.apps.calendar.urls")),
-]
+)
 
 if settings.DEBUG:
     import debug_toolbar

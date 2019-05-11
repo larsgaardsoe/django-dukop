@@ -34,6 +34,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',  # Uses sessions
     'django.contrib.messages.middleware.MessageMiddleware',  # Uses sessions
     'django.middleware.clickjacking.XFrameOptionsMiddleware',  # Protects against clickjacking
+    'django.middleware.locale.LocaleMiddleware',
     'csp.middleware.CSPMiddleware',  # Modifies/sets CSP headers
 ]
 
@@ -82,11 +83,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+AUTH_USER_MODEL = 'users.User'
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGES = [('en', _('English')), ('da', _('Danish'))]
-LANGUAGE_CODE = "da-dk"
+LANGUAGE_CODE = "da"
 
 LOCALE_PATHS = [str(BASE_DIR / "locale")]
 

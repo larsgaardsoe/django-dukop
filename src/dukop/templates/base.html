@@ -39,7 +39,7 @@
 
                 {% if user.is_authenticated %}
 
-                  <a class="header__link" href="/events/new?locale=da">{% trans "New event" %}</a>
+                  <a class="header__link" href="{% url 'calendar:event_create' %}">{% trans "New event" %}</a>
                   <a class="header__link" href="{% url "users:logout" %}">{% trans "Log out" %}</a>
 
                 {% else %}
