@@ -8,6 +8,7 @@ Collaborate calendar for Copenhagen area
 
 * Python 3.6+
 * SQLite3 (development)
+  * `sudo apt install libsqlite3-dev`
 * Postgres (deployment)
 
 ## Quickstart
