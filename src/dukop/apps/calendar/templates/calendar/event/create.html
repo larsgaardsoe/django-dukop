@@ -18,6 +18,15 @@
 
 {% endfor %}
 
+{% for form in images %}
+
+  {{ form.as_p }}
+
+  <!--OPRET EKSTRA DATO FELTER HER -->
+  <!-- <p><input type="date" name="sdjklfhsklfhlks"></p> -->
+
+{% endfor %}
+
 <button type="submit">{% trans "Create" %}</button>
 
 </form>

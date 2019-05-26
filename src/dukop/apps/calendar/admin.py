@@ -7,15 +7,18 @@ class EventTimeInline(admin.TabularInline):
     model = models.EventTime
 
 
+class EventImageInlineAdmin(admin.TabularInline):
+    model = models.EventImage
+
+
 @admin.register(models.Event)
 class EventAdmin(admin.ModelAdmin):
     list_display = ("name",)
-    inlines = [EventTimeInline]
+    inlines = [EventTimeInline, EventImageInlineAdmin]
 
 
 class EventInlineAdmin(admin.TabularInline):
     model = models.Event
-    list_display = ("name",)
 
 
 @admin.register(models.Interval)
