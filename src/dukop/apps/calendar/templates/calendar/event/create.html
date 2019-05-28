@@ -1,34 +1,39 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block content %}
+{% block cardContent %}
 
-<h1>{% trans "Create event" %}</h1>
+<div class="create-event">
+  <h1 class="card__title">{% trans "Create event" %}</h1>
 
-<form method="POST">
+  <div class="card__text">
+    <form action="" method="post">
+      {% csrf_token %}
+      <table>
+        {% for field in form %}
+        <tr class="{{ field.name }}">
+          <th>
+            {{ field.label_tag}}
+          </th>
+          <td>
+            {{ field }}
+          </td>
+        </tr>
 
-{{ form.as_p }}
+        {% endfor %}
+        <tr>
+          <th><label>Tidspunkt</label></th>
+          <td>
+            {% for time in times %}
+            {{ time.as_p }}
+            {% endfor %}
+          </td>
+        </tr>
 
-{% for form in times %}
-
-  {{ form.as_p }}
-
-  <!--OPRET EKSTRA DATO FELTER HER -->
-  <!-- <p><input type="date" name="sdjklfhsklfhlks"></p> -->
-
-{% endfor %}
-
-{% for form in images %}
-
-  {{ form.as_p }}
-
-  <!--OPRET EKSTRA DATO FELTER HER -->
-  <!-- <p><input type="date" name="sdjklfhsklfhlks"></p> -->
-
-{% endfor %}
-
-<button type="submit">{% trans "Create" %}</button>
-
-</form>
+      </table>
+      <button type="submit">{% trans "Create" %}</button>
+    </form>
+  </div>
+</div>
 
 {% endblock %}
