@@ -17,5 +17,6 @@ class EventCreate(CreateView):
 
     def get_context_data(self, **kwargs):
         c = CreateView.get_context_data(self, **kwargs)
-        c['times'] = forms.EventTimeFormSet()
+        c['times'] = forms.EventTimeFormSet(prefix='times')
+        c['images'] = forms.EventImageFormSet(prefix='images')
         return c
